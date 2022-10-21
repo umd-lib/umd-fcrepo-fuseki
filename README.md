@@ -1,11 +1,15 @@
-# Fuseki Image for umd-fcrepo-docker
+# umd-fcrepo-fuseki
+
+UMD Libraries Fuseki Triplestore
+
+## Docker Image
 
 Built from the [OpenJDK 8 Docker base image](https://hub.docker.com/_/openjdk),
 with [Fuseki 2.3.1](https://jena.apache.org/download/index.cgi).
 
 [Dockerfile](Dockerfile)
 
-Create a persistant data volume, if needed:
+Create a persistent data volume, if needed:
 
 ```bash
 docker volume create fcrepo-fuseki-data
@@ -39,5 +43,3 @@ specify a build target of `fuseki`:
 docker build --target fuseki -t fuseki .
 docker run -it --rm -p 3030:3030 -v $(pwd)/data:/var/opt/fuseki fuseki
 ```
-
-
