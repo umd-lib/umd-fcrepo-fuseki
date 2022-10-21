@@ -7,7 +7,7 @@
 # where <VERSION> is the Docker image version to create.
 
 # generic Fuseki image
-FROM openjdk:8u265-jdk-buster AS fuseki
+FROM openjdk:8u312-jdk-bullseye AS fuseki
 
 ENV FUSEKI_VERSION 2.3.1
 ENV FUSEKI_HOME /opt/apache-jena-fuseki-${FUSEKI_VERSION}
