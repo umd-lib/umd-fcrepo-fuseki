@@ -7,7 +7,7 @@
 # where <VERSION> is the Docker image version to create.
 
 # generic Fuseki image
-FROM eclipse-temurin:8u462-b08-jdk-jammy AS fuseki
+FROM eclipse-temurin:8-jdk-jammy AS fuseki
 
 ENV FUSEKI_VERSION=2.3.1
 ENV FUSEKI_URL=https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-${FUSEKI_VERSION}.tar.gz
