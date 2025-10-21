@@ -4,8 +4,7 @@ UMD Libraries Fuseki Triplestore
 
 ## Docker Image
 
-Built from the [OpenJDK 8 Docker base image](https://hub.docker.com/_/openjdk),
-with [Fuseki 2.3.1](https://jena.apache.org/download/index.cgi).
+Built from the [Eclipse Temurin JDK 8 Docker base image] with [Fuseki 2.3.1].
 
 [Dockerfile](Dockerfile)
 
@@ -43,3 +42,6 @@ specify a build target of `fuseki`:
 docker build --target fuseki -t fuseki .
 docker run -it --rm -p 3030:3030 -v $(pwd)/data:/var/opt/fuseki fuseki
 ```
+
+[Eclipse Temurin JDK 8 Docker base image]: https://hub.docker.com/_/eclipse-temurin
+[Fuseki 2.3.1]: https://jena.apache.org/download/index.cgi
