@@ -9,6 +9,12 @@
 # generic Fuseki image
 FROM eclipse-temurin:8-jdk-jammy AS fuseki
 
+# remove vulnerable CA certs (see: https://ops.java/emudhra)
+RUN keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "emsignrootcag1 [jdk]" && \
+    keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "emsignrootcag2 [jdk]" && \
+    keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "emsigneccrootcag3 [jdk]" && \
+    keytool -delete -keystore $JAVA_HOME/jre/lib/security/cacerts -alias "comodoaaaca [jdk]"
+
 ENV FUSEKI_VERSION=2.3.1
 ENV FUSEKI_URL=https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-${FUSEKI_VERSION}.tar.gz
 ENV FUSEKI_HOME=/opt/apache-jena-fuseki-${FUSEKI_VERSION}
